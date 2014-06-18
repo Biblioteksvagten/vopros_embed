@@ -47,3 +47,11 @@ textarea {
     margin: 1em 0;
   }
 }
+
+#embedded-page-wrapper table {
+  width: auto;
+}
+
+#embedded-page-wrapper td.hours {
+  text-align: right;
+}

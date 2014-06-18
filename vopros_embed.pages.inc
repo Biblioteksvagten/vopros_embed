@@ -275,6 +275,39 @@ function vopros_embed_question_submitted_page() {
     ),
   );
 
+  $opening_hours = array(
+    array(
+      'data' => array(
+        'Mandag-torsdag:',
+        array('data' => 'kl. 8.00 - 22.00', 'class' => 'hours'),
+      )
+    ),
+    array(
+      'data' => array(
+        'Fredag:',
+        array('data' => 'kl. 8.00 - 20.00', 'class' => 'hours'),
+      ),
+    ),
+    array(
+      'data' => array(
+        'Lørdag:',
+        array('data' => 'kl. 8.00 - 16.00', 'class' => 'hours'),
+      ),
+    ),
+    array(
+      'data' => array(
+        'Søndag:',
+        array('data' => 'kl.14.00 - 22.00', 'class' => 'hours'),
+      ),
+    ),
+  );
+
+  $build[] = array(
+    '#prefix' => '<p>',
+    '#suffix' => '</p>',
+    '#markup' => theme('table', array('rows' => $opening_hours, 'caption' => 'Biblioteksvagten er online:')),
+  );
+
   // Add return button.
   if (isset($_GET['destination'])) {
     $build[] = array(
