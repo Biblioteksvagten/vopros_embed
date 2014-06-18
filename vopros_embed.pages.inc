@@ -138,20 +138,6 @@ EOF;
     '#value' => $popup,
   );
 
-  $form['help'] = array(
-    '#markup' => 'Biblioteksvagten er de danske bibliotekers nationale spørgetjeneste, hvor en lang række biblioteker arbejder sammen om at besvare spørgsmål fra brugere i hele landet.'
-  );
-
-  $image = array(
-    'path' => drupal_get_path('module', 'vopros_embed') . '/images/bvagt_logo_mid.jpg',
-    'alt' => 'Biblioteksvagten.dk',
-  );
-  $form['image'] = array(
-    '#prefix' => '<div>',
-    '#suffix' => '</div>',
-    '#markup' => theme('image', $image),
-  );
-
   $form['form']['question_usage'] = array(
     '#type' => 'value',
     '#value' => variable_get('vopros_question_usage_default', ''),
@@ -175,6 +161,22 @@ EOF;
     '#type' => 'submit',
     '#value' => t('Submit question'),
     '#attributes' => array('class' => array('primary-action')),
+  );
+
+  $form['help'] = array(
+    '#prefix' => '<p>',
+    '#suffix' => '</p>',
+    '#markup' => 'Biblioteksvagten er de danske bibliotekers nationale spørgetjeneste, hvor en lang række biblioteker arbejder sammen om at besvare spørgsmål fra brugere i hele landet.',
+  );
+
+  $image = array(
+    'path' => drupal_get_path('module', 'vopros_embed') . '/images/bvagt_logo_mid.jpg',
+    'alt' => 'Biblioteksvagten.dk',
+  );
+  $form['image'] = array(
+    '#prefix' => '<div>',
+    '#suffix' => '</div>',
+    '#markup' => theme('image', $image),
   );
 
   return $form;
